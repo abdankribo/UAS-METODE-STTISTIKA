@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website sederhana hasil UAS Metode Statistika dan K-NN">
+  <title>UAS Metode Statistika</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home">STAT<span>LAB</span></a>
+    <nav>
+      <a href="#statistik">Statistik</a>
+      <a href="#knn">K-NN</a>
+      <a href="#confidence">Confidence Interval</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">UAS • METODE STATISTIKA</p>
+        <h1>Analisis data yang <span>rapi, sederhana,</span> dan mudah dipahami.</h1>
+        <p class="lead">
+          Ringkasan hasil perhitungan statistik, K-NN Regression, serta selang kepercayaan
+          yang disusun dari notebook UAS.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#statistik">Lihat Hasil</a>
+          <a class="button secondary" href="#knn">Lihat K-NN</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="card-label">HASIL UTAMA</span>
+        <strong>48</strong>
+        <p>Prediksi K-NN<br>untuk y pada (14, 19)</p>
+      </div>
+    </section>
+
+    <section class="section" id="statistik">
+      <div class="section-heading">
+        <p class="eyebrow">01 • ANALISIS DATA</p>
+        <h2>Statistik deskriptif & interval 99%</h2>
+        <p>Data pengamatan digunakan untuk menghitung rata-rata, simpangan baku, skewness, kurtosis, dan selang kepercayaan.</p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span>Rata-rata</span>
+          <strong>53.90</strong>
+        </article>
+        <article class="stat-card">
+          <span>Std. Deviasi Sampel</span>
+          <strong>7.50</strong>
+        </article>
+        <article class="stat-card">
+          <span>Skewness</span>
+          <strong>0.08</strong>
+        </article>
+        <article class="stat-card">
+          <span>Excess Kurtosis</span>
+          <strong>-1.38</strong>
+        </article>
+      </div>
+
+      <div class="result-box">
+        <div>
+          <p class="eyebrow">INTERVAL KEPERCAYAAN 99%</p>
+          <h3>46.19 &lt; μ &lt; 61.61</h3>
+          <p>Karena σ populasi tidak diketahui dan n = 10, digunakan distribusi t dengan df = 9.</p>
+        </div>
+        <div class="formula">x̄ ± t<sub>0.995;9</sub> · s / √n</div>
+      </div>
+    </section>
+
+    <section class="section dark" id="knn">
+      <div class="section-heading">
+        <p class="eyebrow">02 • K-NN REGRESSION</p>
+        <h2>Prediksi menggunakan tetangga terdekat</h2>
+        <p>Target yang diprediksi adalah y ketika x1 = 14 dan x2 = 19. Perhitungan menggunakan k = 3.</p>
+      </div>
+
+      <div class="knn-layout">
+        <div class="target-card">
+          <span class="card-label">TARGET</span>
+          <div class="coordinates">
+            <div><small>x1</small><strong>14</strong></div>
+            <div><small>x2</small><strong>19</strong></div>
+          </div>
+          <div class="prediction">
+            <small>Prediksi y</small>
+            <strong>48</strong>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>x1</th>
+                <th>x2</th>
+                <th>Jarak</th>
+                <th>y</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="nearest"><td>10</td><td>15</td><td>17</td><td>2.236</td><td>49</td></tr>
+              <tr class="nearest"><td>11</td><td>15</td><td>17</td><td>2.236</td><td>49</td></tr>
+              <tr class="nearest"><td>8</td><td>12</td><td>17</td><td>2.828</td><td>46</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Tiga data dengan jarak terkecil dipakai sebagai tetangga terdekat.</p>
+        </div>
+      </div>
+
+      <div class="calculation">
+        <span>Perhitungan</span>
+        <code>ŷ = (49 + 49 + 46) / 3 = 48</code>
+      </div>
+    </section>
+
+    <section class="section" id="confidence">
+      <div class="section-heading">
+        <p class="eyebrow">03 • SELANG KEPERCAYAAN</p>
+        <h2>Rata-rata IP mahasiswa</h2>
+        <p>Untuk bagian ini simpangan baku populasi diketahui sebesar 0.3 dan ukuran sampel adalah 36.</p>
+      </div>
+
+      <div class="confidence-grid">
+        <div class="info-card">
+          <span>n</span>
+          <strong>36</strong>
+          <small>Ukuran sampel</small>
+        </div>
+        <div class="info-card">
+          <span>x̄</span>
+          <strong>2.60</strong>
+          <small>Rata-rata sampel</small>
+        </div>
+        <div class="info-card">
+          <span>σ</span>
+          <strong>0.30</strong>
+          <small>Standar deviasi populasi</small>
+        </div>
+        <div class="info-card highlight">
+          <span>95% CI</span>
+          <strong>2.50 – 2.70</strong>
+          <small>Selang kepercayaan</small>
+        </div>
+      </div>
+
+      <div class="simple-note">
+        <strong>Kesimpulan:</strong>
+        dengan tingkat kepercayaan 95%, rata-rata IP populasi diestimasi berada pada interval
+        sekitar <b>2.502 sampai 2.698</b>.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>STATLAB</strong>
+      <p>Ringkasan UAS Metode Statistika.</p>
+    </div>
+    <p>HTML + CSS • Responsive • Tanpa framework</p>
+  </footer>
+</body>
+</html>
